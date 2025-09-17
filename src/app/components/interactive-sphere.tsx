@@ -8,7 +8,7 @@ import * as THREE from "three"
 // Floating logo card
 const LogoCard = memo(function LogoCard() {
   const meshRef = useRef<THREE.Mesh>(null)
-  const texture = useLoader(THREE.TextureLoader, "/logo.png") // keep logo in /public
+  const texture = useLoader(THREE.TextureLoader, "/logo.png") // put your logo in /public/logo.png
 
   useFrame((state) => {
     if (meshRef.current) {
@@ -32,12 +32,12 @@ const LogoCard = memo(function LogoCard() {
   )
 })
 
-// Optional particle field
+// Optional background particle field
 const ParticleField = memo(function ParticleField() {
   const pointsRef = useRef<THREE.Points>(null)
-  const positions = new Float32Array(150 * 3)
+  const positions = new Float32Array(120 * 3)
 
-  for (let i = 0; i < 150; i++) {
+  for (let i = 0; i < 120; i++) {
     positions[i * 3] = (Math.random() - 0.5) * 20
     positions[i * 3 + 1] = (Math.random() - 0.5) * 20
     positions[i * 3 + 2] = (Math.random() - 0.5) * 20
