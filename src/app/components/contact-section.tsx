@@ -85,7 +85,7 @@ export function ContactSection() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-white">Email Us</h4>
-                  <p className="text-muted-foreground">hello.hexpeak.com</p>
+                  <p className="text-muted-foreground">muneesmmm@gmail.com</p>
                 </div>
               </div>
 
@@ -95,7 +95,7 @@ export function ContactSection() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-white">Call Us</h4>
-                  <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                  <p className="text-muted-foreground">+91 9645 732 562</p>
                 </div>
               </div>
 
@@ -106,9 +106,9 @@ export function ContactSection() {
                 <div>
                   <h4 className="font-semibold text-white">Visit Us</h4>
                   <p className="text-muted-foreground">
-                    123 Business Ave, Suite 100
+                    Thiruvegappura
                     <br />
-                    City, State 12345
+                    Palakkad, Kerala 679304
                   </p>
                 </div>
               </div>
