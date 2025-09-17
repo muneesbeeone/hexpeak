@@ -5,7 +5,7 @@ import { Button } from "../components/ui/button"
 import { Globe, Paintbrush, Building, Stethoscope, Rocket, ArrowRight, ShoppingCart } from "lucide-react"
 import Link from "next/link"
 import { useEffect, useRef } from "react"
-import { FloatingElements } from "./floating-elements"
+// import { FloatingElements } from "./floating-elements"
 
 export function ServicesSection() {
   const sectionRef = useRef<HTMLElement>(null)
@@ -88,7 +88,7 @@ export function ServicesSection() {
       id="services"
       className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-background via-card/20 to-background relative overflow-hidden"
     >
-      <FloatingElements />
+      {/* <FloatingElements /> */}
 
       <div className="absolute top-20 left-10 w-32 h-32 gradient-glow rounded-full opacity-20 animate-float" />
       <div className="absolute bottom-20 right-10 w-24 h-24 gradient-glow rounded-full opacity-15 animate-pulse-slow" />

@@ -12,7 +12,7 @@ import { ContactSection } from "./components/contact-section"
 import { Footer } from "./components/footer"
 
 export const metadata = {
-  title: "Hexpeak - Premium Landing Page Development | Convert Visitors to Customers",
+  title: "Hexpeak - Premium Website Development | Convert Visitors to Customers",
   description:
     "Professional landing page development for every business type. Boost conversions with custom-designed, mobile-responsive landing pages. Specializing in business, personal, and e-commerce landing pages with proven results.",
   keywords:

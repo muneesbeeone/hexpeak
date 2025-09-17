@@ -12,26 +12,19 @@ interface FloatingOrbProps {
   position: [number, number, number]
   color: string
   scale?: number
-  mouse?: [number, number] // normalized cursor
 }
 
 const FloatingOrb = memo(function FloatingOrb({
   position,
   color,
   scale = 1,
-  mouse = [0, 0],
 }: FloatingOrbProps) {
   const meshRef = useRef<THREE.Mesh>(null)
 
   useFrame((state) => {
     if (meshRef.current) {
-      // Base floating rotation
-      meshRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.5) * 0.2 + mouse[1] * 0.3
-      meshRef.current.rotation.y = Math.sin(state.clock.elapsedTime * 0.3) * 0.3 + mouse[0] * 0.3
-
-      // Optional subtle position shift
-      meshRef.current.position.x = position[0] + mouse[0]
-      meshRef.current.position.y = position[1] + mouse[1]
+      meshRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.5) * 0.2
+      meshRef.current.rotation.y = Math.sin(state.clock.elapsedTime * 0.3) * 0.3
     }
   })
 
@@ -83,21 +76,10 @@ const ParticleField = memo(function ParticleField() {
 export function ThreeBackground() {
   const [dpr, setDpr] = useState(1)
   const [mounted, setMounted] = useState(false)
-  const [mouse, setMouse] = useState<[number, number]>([0, 0])
 
   useEffect(() => {
     setDpr(Math.min(window.devicePixelRatio, 1.5))
     setMounted(true)
-
-    const handleMouseMove = (e: MouseEvent) => {
-      // Normalize cursor to range [-0.5, 0.5]
-      const x = (e.clientX / window.innerWidth - 0.5) * 2
-      const y = (e.clientY / window.innerHeight - 0.5) * -2
-      setMouse([x * 0.5, y * 0.5])
-    }
-
-    window.addEventListener("mousemove", handleMouseMove)
-    return () => window.removeEventListener("mousemove", handleMouseMove)
   }, [])
 
   if (!mounted) return null
@@ -119,11 +101,11 @@ export function ThreeBackground() {
         <ambientLight intensity={0.4} />
         <pointLight position={[10, 10, 10]} intensity={0.8} />
 
-        {/* Floating orbs with mouse interactivity */}
-        <FloatingOrb position={[-4, 2, -2]} color="#3b82f6" scale={0.8} mouse={mouse} />
-        <FloatingOrb position={[4, -2, -3]} color="#8b5cf6" scale={0.6} mouse={mouse} />
-        <FloatingOrb position={[2, 4, -4]} color="#06b6d4" scale={0.7} mouse={mouse} />
-        <FloatingOrb position={[-3, -3, -1]} color="#10b981" scale={0.5} mouse={mouse} />
+        {/* Floating orbs (no mouse interactions now) */}
+        <FloatingOrb position={[-4, 2, -2]} color="#3b82f6" scale={0.8} />
+        <FloatingOrb position={[4, -2, -3]} color="#8b5cf6" scale={0.6} />
+        <FloatingOrb position={[2, 4, -4]} color="#06b6d4" scale={0.7} />
+        <FloatingOrb position={[-3, -3, -1]} color="#10b981" scale={0.5} />
 
         <ParticleField />
       </Canvas>
