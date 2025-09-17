@@ -1,36 +1,28 @@
 import { MetadataRoute } from "next";
 
+export const dynamic = "force-static"; // ✅ important for next export
+
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: "https://hexpeak.munees.co.in/",
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 1.0,
-    },
-    {
-      url: "https://hexpeak.munees.co.in/services",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: "https://hexpeak.munees.co.in/portfolio",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
+      url: "https://hexpeak.munees.co.in",
+      lastModified: new Date("2025-09-17"),
     },
     {
       url: "https://hexpeak.munees.co.in/about",
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.6,
+      lastModified: new Date("2025-09-17"),
+    },
+    {
+      url: "https://hexpeak.munees.co.in/services",
+      lastModified: new Date("2025-09-17"),
     },
     {
       url: "https://hexpeak.munees.co.in/contact",
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.6,
+      lastModified: new Date("2025-09-17"),
+    },
+    {
+      url: "https://hexpeak.munees.co.in/projects",
+      lastModified: new Date("2025-09-17"),
     },
   ];
 }
