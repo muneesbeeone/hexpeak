@@ -29,7 +29,7 @@ export function HeroSection() {
 
       <div className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="animate-fade-in-up">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-balance">
+          <h1 className="text-5xl md:text-7xl font-bold mt-10 md:mt-0 mb-6 text-balance">
             <span className="text-foreground">Elite</span> <span className="gradient-text">Websites</span>{" "}
             <span className="text-foreground">That Dominate Markets</span>
           </h1>
